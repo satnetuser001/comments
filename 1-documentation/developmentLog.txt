@@ -5,3 +5,18 @@ Created UML database diagram in MySQL Workbench and saved in a directory: commen
 
 2024.10.16
 Added some changes to the UML database diagram.
+Initialized git repository:
+	git init, git add ., git commit
+Pushed repository to: github.com/satnetuser001/comments. Further work with Git will not be described, look at the commits.
+Create database:
+	CREATE DATABASE comments
+	CHARACTER SET utf8mb4
+	COLLATE utf8mb4_unicode_ci;
+Create database user:
+	CREATE USER 'comments_app'@'localhost' IDENTIFIED BY 'standart';
+	the password is hidden because the development log will be on GitHub.
+Grant privileges to database user:
+	GRANT ALL PRIVILEGES ON comments.* TO 'comments_app'@'localhost';
+Installed Laravel application:
+	composer create-project --prefer-dist laravel/laravel .
+!!!There was an error in the sequence of actions. The Laravel application cannot be installed in a non-empty directory. I had to temporarily transfer existing files.
