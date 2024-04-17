@@ -1,0 +1,7 @@
+2024.10.16
+Familiarization with the technical task.
+Learning of the functionality MySQL Workbench.
+Created UML database diagram in MySQL Workbench and saved in a directory: comments/1-documentation/uml.
+
+2024.10.16
+Added some changes to the UML database diagram.
