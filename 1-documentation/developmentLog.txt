@@ -20,3 +20,8 @@ Grant privileges to database user:
 Installed Laravel application:
 	composer create-project --prefer-dist laravel/laravel .
 !!!There was an error in the sequence of actions. The Laravel application cannot be installed in a non-empty directory. I had to temporarily transfer existing files.
+Added database connection settings to the .env file.
+Created migrations according to the UML diagram.
+Applied the migrations.
+Dumped DB in MYSQL into comments/1-documentation/mysqlDumpDB folder:
+	mysqldump -uroot -p comments > comments.sql
