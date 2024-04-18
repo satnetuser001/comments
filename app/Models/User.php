@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Comment;
 
 class User extends Authenticatable
 {
@@ -18,9 +19,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        //'name',
         'email',
-        'password',
+        //'password',
     ];
 
     /**
@@ -29,8 +30,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
-        'remember_token',
+        //'password',
+        //'remember_token',
     ];
 
     /**
@@ -39,7 +40,14 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
+        //'email_verified_at' => 'datetime',
+        //'password' => 'hashed',
     ];
+
+    /**
+     * Get this user's comments
+     */
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
 }

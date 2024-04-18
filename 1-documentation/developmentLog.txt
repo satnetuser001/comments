@@ -1,9 +1,9 @@
-2024.10.16
+2024.04.16
 Familiarization with the technical task.
 Learning of the functionality MySQL Workbench.
 Created UML database diagram in MySQL Workbench and saved in a directory: comments/1-documentation/uml.
 
-2024.10.16
+2024.04.17
 Added some changes to the UML database diagram.
 Initialized git repository:
 	git init, git add ., git commit
@@ -25,3 +25,11 @@ Created migrations according to the UML diagram.
 Applied the migrations.
 Dumped DB in MYSQL into comments/1-documentation/mysqlDumpDB folder:
 	mysqldump -uroot -p comments > comments.sql
+
+2024.04.18
+Make models for a tables comments and files:
+	php artisan make:model Comment
+	php artisan make:model File
+Defined the fields available for mass assignment in models Comment and File.
+Added one-to-many relationship methods between models User and Comment.
+Added one-to-many relationship methods between models Comment and File.
