@@ -25,6 +25,13 @@ class Comment extends Model
     ];
 
     /**
+     * The relationships that should always be loaded.
+     *
+     * @var array
+     */
+    protected $with = ['children'];
+
+    /**
      * Get the author of this comment.
      */
     public function user(){
@@ -36,5 +43,21 @@ class Comment extends Model
      */
     public function files(){
         return $this->hasMany(File::class);
+    }
+
+    /**
+     * Get parent of this comment
+     */
+    public function parent()
+    {
+        return $this->belongsTo(Comment::class, 'parent_id');
+    }
+
+    /**
+     * Get children of this comment
+     */
+    public function children()
+    {
+        return $this->hasMany(Comment::class, 'parent_id');
     }
 }

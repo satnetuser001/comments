@@ -33,3 +33,7 @@ Make models for a tables comments and files:
 Defined the fields available for mass assignment in models Comment and File.
 Added one-to-many relationship methods between models User and Comment.
 Added one-to-many relationship methods between models Comment and File.
+Created a new seeder:
+	php artisan make:seeder UsersCommentsSeeder
+Added seeder functionality for populating the "Users" and "Comments" tables.
+The database is filled with test data.
