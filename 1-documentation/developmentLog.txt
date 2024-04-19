@@ -50,3 +50,5 @@ Created a View "Home Page":
 	php artisan make:view homePage
 	php artisan make:view includes.commentTree
 Into CommentController index method added logic.
+
+Added pagination on "Home Page"

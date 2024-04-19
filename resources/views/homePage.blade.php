@@ -8,5 +8,6 @@
 <body>
     <h1>Hello world from "Home Page" !!!</h1>
     @include('includes.commentTree', ['comments' => $comments])
+    <div>{{ $comments->links() }}</div>
 </body>
 </html>

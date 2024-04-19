@@ -13,7 +13,7 @@ class CommentController extends Controller
     public function index()
     {
         //$comments = Comment::where('parent_id', '=', NULL)->latest()->get();
-        $comments = Comment::where('parent_id', '=', NULL)->get();
+        $comments = Comment::where('parent_id', '=', NULL)->paginate(25);
         //dd($comments);
         return view('homePage', ['comments' => $comments]);
     }
