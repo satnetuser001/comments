@@ -15,11 +15,11 @@ class UsersCommentsSeeder extends Seeder
     public function run(): void
     {
         /*settings*/
-        $usersCount = 2;
+        $usersCount = 50;
         $commentsFirstLevelCount = 5;
 
         /*users*/
-        for ($i=1; $i <= $usersCount; $i++) {            
+        for ($i=1; $i <= $usersCount; $i++) {
             $objUser = User::create([
                 'email' => 'userEmail_' . $i . '@gmail.com',
             ]);

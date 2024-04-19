@@ -37,3 +37,16 @@ Created a new seeder:
 	php artisan make:seeder UsersCommentsSeeder
 Added seeder functionality for populating the "Users" and "Comments" tables.
 The database is filled with test data.
+
+2024.04.19
+Dumped DB with test data in MYSQL into comments/1-documentation/mysqlDumpDB folder:
+	mysqldump -uroot -p comments > comments.sql
+Created a Comment Controller with CRUD functionality:
+	php artisan make:controller CommentController --resource
+
+Adding a "Home Page" to the application to display all comments:
+Created a Route.
+Created a View "Home Page":
+	php artisan make:view homePage
+	php artisan make:view includes.commentTree
+Into CommentController index method added logic.
