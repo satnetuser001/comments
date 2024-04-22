@@ -52,3 +52,17 @@ Created a View "Home Page":
 Into CommentController index method added logic.
 
 Added pagination on "Home Page"
+
+2024.04.21
+The database is filled with more test data to test a pagination:
+	php artisan migrate:fresh --seed
+Dumped DB with test data in MYSQL into comments/1-documentation/mysqlDumpDB folder:
+	mysqldump -uroot -p comments > comments.sql
+Started making "add comment" functionality.
+
+2024.04.22
+Regenerate database test data with different timestamps for each comment:
+	php artisan migrate:fresh --seed
+Dumped DB with test data in MYSQL into comments/1-documentation/mysqlDumpDB folder:
+	mysqldump -uroot -p comments > comments.sql
+Finished "add comment" functionality without validation and CAPTCHA.

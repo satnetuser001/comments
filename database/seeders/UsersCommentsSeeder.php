@@ -15,7 +15,7 @@ class UsersCommentsSeeder extends Seeder
     public function run(): void
     {
         /*settings*/
-        $usersCount = 50;
+        $usersCount = 200;
         $commentsFirstLevelCount = 5;
 
         /*users*/
@@ -32,6 +32,7 @@ class UsersCommentsSeeder extends Seeder
                     'home_page' => Str::random(10) . '@gmail.com',
                     'text' => "$j/1",
                 ]);
+                sleep(1);
 
                 $comment11 = $comment1->children()->create([
                     "user_id" => $comment1->user_id,
@@ -39,6 +40,7 @@ class UsersCommentsSeeder extends Seeder
                     'home_page' => Str::random(10) . '@gmail.com',
                     'text' => "$j/1/1",
                 ]);
+                sleep(1);
 
                 $comment12 = $comment1->children()->create([
                     "user_id" => $comment1->user_id,
@@ -46,6 +48,7 @@ class UsersCommentsSeeder extends Seeder
                     'home_page' => Str::random(10) . '@gmail.com',
                     'text' => "$j/1/2",
                 ]);
+                sleep(1);
 
                 $comment121 = $comment12->children()->create([
                     "user_id" => $comment12->user_id,
@@ -53,6 +56,7 @@ class UsersCommentsSeeder extends Seeder
                     'home_page' => Str::random(10) . '@gmail.com',
                     'text' => "$j/1/2/1",
                 ]);
+                sleep(1);
             }
         }
     }

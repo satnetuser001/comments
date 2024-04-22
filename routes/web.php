@@ -14,4 +14,6 @@ use App\Http\Controllers\CommentController;
 |
 */
 
-Route::get('/', [CommentController::class, 'index'])->name('homePage');
+Route::get('/', [CommentController::class, 'index'])->name('home');
+Route::get('/create/{parentId?}', [CommentController::class, 'create'])->where('parentId', '[0-9]+')->name('create');
+Route::post('/', [CommentController::class, 'store'])->name('store');

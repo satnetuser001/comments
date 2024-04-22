@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comment;
+use App\Models\User;
 
 class CommentController extends Controller
 {
@@ -12,18 +13,23 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //$comments = Comment::where('parent_id', '=', NULL)->latest()->get();
-        $comments = Comment::where('parent_id', '=', NULL)->paginate(25);
-        //dd($comments);
-        return view('homePage', ['comments' => $comments]);
+        $comments = Comment::where('parent_id', '=', NULL)->latest()->paginate(25);
+        return view('home', ['comments' => $comments]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(?int $parentId = null)
     {
-        //
+        //save comment parentId into session or clear previous session for top-level comment
+        if ($parentId) {
+            session(['parentId' => $parentId]);
+        } else {
+            session(['parentId' => null]);
+        }
+
+        return view('create');
     }
 
     /**
@@ -31,7 +37,28 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //find user in DB or create new
+        $user = User::firstOrCreate(['email' => $request->email]);
+
+        //create a sub-comment or top-level comment
+        if (session()->get('parentId')) {
+            $comment = Comment::findOrFail(session()->get('parentId'));
+            $comment->children()->create([
+                'user_id' => $user->id,
+                'user_name' => $request->userName,
+                'home_page' => $request->homePage,
+                'text' => $request->text,
+            ]);
+        } else {
+            Comment::create([
+                'user_id' => $user->id,
+                'user_name' => $request->userName,
+                'home_page' => $request->homePage,
+                'text' => $request->text,
+            ]);
+        }
+
+        return redirect()->route('home');
     }
 
     /**
