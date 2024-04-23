@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Create Comment Page</title>
+    <link rel="stylesheet" type="text/css" href="/styles/main.css">
 </head>
 <body>
     <h1>
@@ -29,7 +30,7 @@
 
         <!-- E-mail (формат email) – обязательное поле -->
         <div class="">
-            <label><b>E-mail</b></label>
+            <label><b>Email</b></label>
             <input name="email" type="text" value="{{ old('email') }}" class="">
             <div class="errorMessage">
                 @error('email')

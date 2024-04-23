@@ -66,3 +66,11 @@ Regenerate database test data with different timestamps for each comment:
 Dumped DB with test data in MYSQL into comments/1-documentation/mysqlDumpDB folder:
 	mysqldump -uroot -p comments > comments.sql
 Finished "add comment" functionality without validation and CAPTCHA.
+
+2024.04.23
+Added error message CSS style on Create page.
+Comments validation will be done using Form Requests.
+Create Form Requests:
+	php artisan make:request StoreCommentRequest
+Added rules and error messages to StoreCommentRequest class.
+Changed the CommentController 'store' method to use validated data.

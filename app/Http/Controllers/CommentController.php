@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 use App\Models\User;
+use App\Http\Requests\StoreCommentRequest;
 
 class CommentController extends Controller
 {
@@ -35,26 +36,30 @@ class CommentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    //public function store(Request $request)
+    public function store(StoreCommentRequest $request)
     {
-        //find user in DB or create new
-        $user = User::firstOrCreate(['email' => $request->email]);
+        //get the validated input data.
+        $validated = $request->validated();
 
-        //create a sub-comment or top-level comment
+        //find user in DB or create new
+        $user = User::firstOrCreate(['email' => $validated['email']]);
+
+        //create a sub-level or top-level comment
         if (session()->get('parentId')) {
             $comment = Comment::findOrFail(session()->get('parentId'));
             $comment->children()->create([
                 'user_id' => $user->id,
-                'user_name' => $request->userName,
-                'home_page' => $request->homePage,
-                'text' => $request->text,
+                'user_name' => $validated['userName'],
+                'home_page' => $validated['homePage'],
+                'text' => $validated['text'],
             ]);
         } else {
             Comment::create([
                 'user_id' => $user->id,
-                'user_name' => $request->userName,
-                'home_page' => $request->homePage,
-                'text' => $request->text,
+                'user_name' => $validated['userName'],
+                'home_page' => $validated['homePage'],
+                'text' => $validated['text'],
             ]);
         }
 
@@ -66,7 +71,8 @@ class CommentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        //the method is not currently used.
+        return redirect()->route('home');
     }
 
     /**
@@ -74,7 +80,8 @@ class CommentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        //the method is not currently used.
+        return redirect()->route('home');
     }
 
     /**
@@ -82,7 +89,8 @@ class CommentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        //the method is not currently used.
+        return redirect()->route('home');
     }
 
     /**
@@ -90,6 +98,7 @@ class CommentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        //the method is not currently used.
+        return redirect()->route('home');
     }
 }
