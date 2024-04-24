@@ -74,3 +74,19 @@ Create Form Requests:
 	php artisan make:request StoreCommentRequest
 Added rules and error messages to StoreCommentRequest class.
 Changed the CommentController 'store' method to use validated data.
+
+CAPTCHA. Because I have no experience with CAPTCHA, I’ll make a separate branch for it in Git:
+	git checkout -b CAPTCHA
+Learning CAPTCHA.
+
+2024.04.24
+CAPTCHA. I choose between Google reCAPTCHA and bonecms/laravel-captcha package. IMHO , the laravel-captcha is more suitable for the test task conditions (https://github.com/igoshev/laravel-captcha).
+Install laravel-captcha:
+	composer require bonecms/laravel-captcha
+!!!Failed. bonecms/laravel-captcha package does not work with Laravel 11.
+
+Make a new branch in Git:
+	git checkout -b CAPTCHA_mlk9
+Install other laravel-captcha (https://github.com/mlk9/captcha-laravel):
+	composer require mlk9/captcha-laravel
+!!!Failed. Does not work with Laravel 11.

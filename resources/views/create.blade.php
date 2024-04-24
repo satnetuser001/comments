@@ -51,6 +51,18 @@
         </div>
 
         <!-- CAPTCHA (цифры и буквы латинского алфавита) – изображение и обязательное поле -->
+        <div>
+            <div>
+                 <!-- Captcha generate -->
+                <img src="{{ \Mlk9\Captcha\Facades\Captcha::generate()->image }}" alt="captha"> 
+            </div>
+            <input name="captcha" type="text" autocomplete="off" class="">
+            <div class="errorMessage">
+                @error('captcha')
+                    <span><strong>{{ $message }}</strong></span>
+                @enderror
+            </div>
+        </div>
         <!-- Будет позже -->
 
         <!-- Text (непосредственно сам текст сообщения, все HTML теги не допустимы, кроме разрешенных) – обязательное поле -->
