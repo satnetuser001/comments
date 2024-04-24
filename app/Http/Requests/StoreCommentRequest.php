@@ -25,6 +25,7 @@ class StoreCommentRequest extends FormRequest
             'userName' => 'required|max:255',
             'email' => 'required|email|max:255',
             'homePage' => 'nullable|url|max:255',
+            'captcha' => 'required|captcha',
             'text' => 'required|max:65535',
         ];
     }
