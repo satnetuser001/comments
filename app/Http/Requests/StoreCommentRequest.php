@@ -25,6 +25,7 @@ class StoreCommentRequest extends FormRequest
             'userName' => 'required|max:255',
             'email' => 'required|email|max:255',
             'homePage' => 'nullable|url|max:255',
+            'captcha' => 'required|captcha',
             'text' => 'required|max:65535',
         ];
     }
@@ -46,6 +47,9 @@ class StoreCommentRequest extends FormRequest
 
             'homePage.url' => 'Домашняя страница должна быть формата http://example.com',
             'homePage.max' => 'Домашняя страница не должна содержать более 255 символов',
+
+            'captcha.required' => 'CAPTCHA не должна быть пустой',
+            'captcha.captcha' => 'CAPTCHA введена неверно',
 
             'text.required' => 'Комментарий не должен быть пустым',
             'text.max' => 'Комментарий не должен содержать более 65 535 символов',

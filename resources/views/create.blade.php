@@ -17,7 +17,7 @@
     <form action="{{ route('store') }}" method="POST">
         @csrf
 
-        <!-- User Name (цифры и буквы латинского алфавита) – обязательное поле -->
+        <!-- User Name -->
         <div class="">
             <label><b>User Name</b></label>
             <input name="userName" type="text" value="{{ old('userName') }}" class="">
@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <!-- E-mail (формат email) – обязательное поле -->
+        <!-- E-mail -->
         <div class="">
             <label><b>Email</b></label>
             <input name="email" type="text" value="{{ old('email') }}" class="">
@@ -39,7 +39,7 @@
             </div>
         </div>
 
-        <!-- Home page (формат url) – необязательное поле -->
+        <!-- Home Page -->
         <div class="">
             <label><b>Home Page</b></label>
             <input name="homePage" type="text" value="{{ old('homePage') }}" class="">
@@ -50,10 +50,21 @@
             </div>
         </div>
 
-        <!-- CAPTCHA (цифры и буквы латинского алфавита) – изображение и обязательное поле -->
-        <!-- Будет позже -->
+        <!-- CAPTCHA -->
+        <div>
+            <div>
+                <?php echo Captcha::img('flat'); ?>
+            </div>
+            <input name="captcha" type="text" autocomplete="off" class="">
+            <div class="errorMessage">
+                @error('captcha')
+                    <span><strong>{{ $message }}</strong></span>
+                @enderror
+            </div>
+            
+        </div>
 
-        <!-- Text (непосредственно сам текст сообщения, все HTML теги не допустимы, кроме разрешенных) – обязательное поле -->
+        <!-- Text (Comment) -->
         <div class="">
             <label><b>Text</b></label>
             <textarea name="text" class="">{{ old('text') }}</textarea>
