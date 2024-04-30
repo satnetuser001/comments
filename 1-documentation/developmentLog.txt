@@ -99,3 +99,23 @@ Added CAPTCHA to create a view.
 Added CAPTCHA validation rules and messages to StoreCommentRequest.
 New commit in CAPTCHA_mewebstudio branch.
 Making git fast-forward merge CAPTCHA_mewebstudio and Main branches.
+
+2024.04.25
+SORTING
+Added sorting links to the home page.
+Beginning to make sorting by user email.
+
+
+2024.04.27
+Found a problem: MySQL cannot sort a table by a related field of another table (comments by users.email). This is something new for me.
+
+2024.04.28
+Found a solution to the problem: using an inner join, combine tables and sort by the user's email field.
+Found a problem: eager loading began to load incorrect children sub-comments.
+
+2024.04.29
+I continue to look for a solution to the problem.
+
+2024.04.30
+Found a solution to the problem: inner join was replacing the comment ID with the user ID, and eager loading is loading child sub-comments with the wrong parent ID. Made changes so that the inner join only attaches the user's email.
+Added sorting functionality to the application.

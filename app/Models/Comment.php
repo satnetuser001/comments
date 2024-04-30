@@ -26,10 +26,11 @@ class Comment extends Model
 
     /**
      * The relationships that should always be loaded.
+     * Caution! The model eager greedy loading of all child and parent elements.
      * 
      * @var array
      */
-    protected $with = ['children'];
+    protected $with = ['children', 'user'];
 
     /**
      * Get the author of this comment.

@@ -3,18 +3,69 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Comment;
 use App\Models\User;
 use App\Http\Requests\StoreCommentRequest;
 
+//Caution! The model eager greedy loading of all child and parent elements.
+use App\Models\Comment;
+
 class CommentController extends Controller
 {
+    protected $topLevelCommentsCount = 25;
+
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $comments = Comment::where('parent_id', '=', NULL)->latest()->paginate(25);
+        $comments;
+
+        //handle sorting query
+        //set and correct
+        if (
+            (
+                $request->query('sortField') == 'user_name'
+                or $request->query('sortField') == 'email'
+                or $request->query('sortField') == 'created_at'
+            ) and (
+                $request->query('sortDirection') == 'asc'
+                or $request->query('sortDirection') == 'desc'
+            )
+        ) {
+            session([
+                'sortField' => $request->query('sortField'),
+                'sortDirection' => $request->query('sortDirection'),
+            ]);
+        }
+
+        //not set in first request or incorrect
+        elseif (!session()->get('sortField') or !session()->get('sortDirection')) {
+            session([
+                'sortField' => 'created_at',
+                'sortDirection' => 'desc',
+            ]);
+        }
+
+        //else { leave the current sorting settings when moving to another page }
+
+        //sort comments
+        //by user email
+        if (session()->get('sortField') == 'email') {
+            $comments = Comment::where('parent_id', '=', NULL)
+                ->join('users', 'comments.user_id', '=', 'users.id')
+                ->select('comments.*','users.email')
+                ->orderBy('users.email', session()->get('sortDirection'))
+                ->paginate($this->topLevelCommentsCount)
+            ;
+        }
+        //by user name or created at
+        else {
+            $comments = Comment::where('parent_id', '=', NULL)
+                ->orderBy(session()->get('sortField'), session()->get('sortDirection'))
+                ->paginate($this->topLevelCommentsCount)
+            ;
+        }
+
         return view('home', ['comments' => $comments]);
     }
 
