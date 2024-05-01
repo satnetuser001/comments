@@ -1,5 +1,23 @@
 .errorMessage{
-	display: flex;
-	color: FireBrick;
-	gap: 10px;
+    display: flex;
+    color: FireBrick;
+    gap: 10px;
+}
+
+table,td{
+    border: 2px solid;
+    /*text-align:center;*/
+}
+
+th{
+	display: inline-flex;
+}
+
+ul{
+	padding: 0;
+}
+
+.children{
+	/*margin-left: 50px;*/
+	padding-left: 50px;
 }

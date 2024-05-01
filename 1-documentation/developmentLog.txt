@@ -124,3 +124,4 @@ Re-generate database test data for a more visual sorting result:
 	php artisan migrate:fresh --seed
 Dumped DB with test data in MYSQL into comments/1-documentation/mysqlDumpDB folder:
 	mysqldump -uroot -p comments > comments.sql
+Changes have been made to the "Home Page" view to display comments more clearly.

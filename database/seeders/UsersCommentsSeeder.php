@@ -19,12 +19,12 @@ class UsersCommentsSeeder extends Seeder
         $commentsTopLevelCount = 5;
 
         //properties
-        $emailSerial = 'aa';
+        $emailSerial = 'bb';
 
         //create users
         for ($i=1; $i <= $usersCount; $i++) {
             $objUser = User::create([
-                'email' => 'userEmail_' . $emailSerial . '@example.com',
+                'email' => $emailSerial . '@example.com',
             ]);
             $emailSerial++;
 
@@ -34,34 +34,34 @@ class UsersCommentsSeeder extends Seeder
                 //top-level
                 $comment1 = $objUser->comments()->create([
                     //'parent_id' => null,
-                    'user_name' => Str::random(10) . " (" . $objUser->email . ")",
-                    'home_page' => Str::random(10) . '.example.com',
-                    'text' => "$j/1",
+                    'user_name' => Str::random(5),
+                    'home_page' => Str::random(5) . '.example.com',
+                    'text' => "Top-level test message",
                 ]);
                 sleep(1);
 
                 //sub-level
                 $comment11 = $comment1->children()->create([
                     "user_id" => $comment1->user_id,
-                    'user_name' => Str::random(10) . " (" . $objUser->email . ")",
-                    'home_page' => Str::random(10) . '.example.com',
-                    'text' => "$j/1/1",
+                    'user_name' => Str::random(5),
+                    'home_page' => Str::random(5) . '.example.com',
+                    'text' => "Sub-level test message",
                 ]);
                 sleep(1);
                 $comment12 = $comment1->children()->create([
                     "user_id" => $comment1->user_id,
-                    'user_name' => Str::random(10) . " (" . $objUser->email . ")",
-                    'home_page' => Str::random(10) . '.example.com',
-                    'text' => "$j/1/2",
+                    'user_name' => Str::random(5),
+                    'home_page' => Str::random(5) . '.example.com',
+                    'text' => "Sub-level test message",
                 ]);
                 sleep(1);
 
                 //sub-sub-level
                 $comment121 = $comment12->children()->create([
                     "user_id" => $comment12->user_id,
-                    'user_name' => Str::random(10) . " (" . $objUser->email . ")",
-                    'home_page' => Str::random(10) . '.example.com',
-                    'text' => "$j/1/2/1",
+                    'user_name' => Str::random(5),
+                    'home_page' => Str::random(5) . '.example.com',
+                    'text' => "Sub-sub-level test message",
                 ]);
                 sleep(1);
             }
