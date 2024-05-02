@@ -21,3 +21,7 @@ ul{
 	/*margin-left: 50px;*/
 	padding-left: 50px;
 }
+
+.selectedSort{
+	background: pink;
+}

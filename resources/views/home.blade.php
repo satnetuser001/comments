@@ -11,7 +11,7 @@
         Home Page
     </h1>
     <div>
-        <a href="{{ route('create') }}">New comment</a>
+        <a href="{{ route('create') }}">Новый комментарий</a>
     </div>
     
     @if (count($comments) > 0)

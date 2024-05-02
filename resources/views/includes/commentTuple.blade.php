@@ -9,7 +9,7 @@
             </div>
             <div>
                 {{ $comment->text }}
-                <a href="{{ route('create', $comment->id) }}">Answer</a>
+                <a href="{{ route('create', $comment->id) }}">Ответить</a>
             </div>
         </div>
         @if ($comment->children)

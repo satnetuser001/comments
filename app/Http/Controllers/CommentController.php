@@ -66,7 +66,13 @@ class CommentController extends Controller
             ;
         }
 
-        return view('home', ['comments' => $comments]);
+        //current sorting for the view
+        $sortedBy = [
+            'sortField' => session()->get('sortField'),
+            'sortDirection' => session()->get('sortDirection'),
+        ];
+
+        return view('home', ['comments' => $comments, 'sortedBy' => $sortedBy]);
     }
 
     /**
