@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Requests\StoreCommentRequest;
+//use Illuminate\Support\Facades\Blade;
 
 //Caution! The model eager greedy loading of all child and parent elements.
 use App\Models\Comment;
@@ -99,6 +100,11 @@ class CommentController extends Controller
         //get the validated input data.
         $validated = $request->validated();
 
+        /*------------*/
+        //$sanitizedComment = Blade::clean($validated['text']);
+        $formattedComment = Blade::compileHtml($validated['text']);
+        /*------------*/
+
         //find user in DB or create new
         $user = User::firstOrCreate(['email' => $validated['email']]);
 
@@ -109,14 +115,16 @@ class CommentController extends Controller
                 'user_id' => $user->id,
                 'user_name' => $validated['userName'],
                 'home_page' => $validated['homePage'],
-                'text' => $validated['text'],
+                //'text' => $validated['text'],
+                'text' => $formattedComment,
             ]);
         } else {
             Comment::create([
                 'user_id' => $user->id,
                 'user_name' => $validated['userName'],
                 'home_page' => $validated['homePage'],
-                'text' => $validated['text'],
+                //'text' => $validated['text'],
+                'text' => $formattedComment,
             ]);
         }
 

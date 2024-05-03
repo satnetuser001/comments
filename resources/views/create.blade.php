@@ -73,6 +73,23 @@
                     <span ><strong>{{ $message }}</strong></span>
                 @enderror
             </div>
+            <div>
+                <div>
+                    Для выделения участков текста вы можите использовать теги:
+                </div>
+                <div>
+                    [i]<i>курсив</i>[/i]
+                </div>
+                <div>
+                    [strong]<strong>жирный</strong>[/strong]
+                </div>
+                <div>
+                    [code]<code>программный код</code>[/code]
+                </div>
+                <div>
+                    [a href="URL"]<span class="linkStyle">ссылка</span>[/a]
+                </div>
+            </div>
         </div>
 
         <input type="submit" class="" value="Добавить">

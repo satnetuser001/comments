@@ -25,3 +25,9 @@ ul{
 .selectedSort{
 	background: pink;
 }
+
+.linkStyle{
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
