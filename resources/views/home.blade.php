@@ -2,16 +2,14 @@
 @section('title', 'Home Page')
 
 @section('content')
-    <div class="newComment">
-        <a href="{{ route('create') }}">Новый комментарий</a>
-    </div>
+    <!-- Add new comment button -->
+    <a class="button buttonCreate" href="{{ route('create') }}">Создать комментарий</a>
 
+    <!-- table with comments -->
     @if (count($comments) > 0)
-        <div class="table">
-            @include('includes.commentsTable', ['comments' => $comments])
-        </div>
-        
-        <!-- pagination -->
-        {{ $comments->links() }}
+        @include('includes.commentsTable', ['comments' => $comments])
     @endif
+
+    <!-- pagination -->
+    {{ $comments->links() }}
 @endsection

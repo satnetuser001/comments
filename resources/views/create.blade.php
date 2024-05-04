@@ -3,7 +3,7 @@
 
 @section('content')
     <div>
-        <a href="{{  route('home')  }}">Домой</a>
+        <a class="button" href="{{  route('home')  }}">Домой</a>
     </div>
 
     <form action="{{ route('store') }}" method="POST">

@@ -1,4 +1,4 @@
-<tr>
+<tr class="tableHead">
     <th>
         <div>
             Имя
@@ -7,9 +7,12 @@
             <div>
                 <a
                     href="{{ route('home', ['sortField' => 'user_name', 'sortDirection' => 'asc']) }}"
-                    @if($sortedBy['sortField'] == 'user_name' and $sortedBy['sortDirection'] == 'asc')
-                        class="selectedSort"
-                    @endif
+                    class="
+                        sort
+                        @if($sortedBy['sortField'] == 'user_name' and $sortedBy['sortDirection'] == 'asc')
+                            selectedSort
+                        @endif
+                    "
                 >
                     &#9650;
                 </a>
@@ -17,9 +20,12 @@
             <div>
                 <a
                     href="{{ route('home', ['sortField' => 'user_name', 'sortDirection' => 'desc']) }}"
-                    @if($sortedBy['sortField'] == 'user_name' and $sortedBy['sortDirection'] == 'desc')
-                        class="selectedSort"
-                    @endif
+                    class="
+                        sort
+                        @if($sortedBy['sortField'] == 'user_name' and $sortedBy['sortDirection'] == 'desc')
+                            selectedSort
+                        @endif
+                    "
                 >
                     &#9660;
                 </a>
@@ -34,9 +40,12 @@
             <div>
                 <a
                     href="{{ route('home', ['sortField' => 'email', 'sortDirection' => 'asc']) }}"
-                    @if($sortedBy['sortField'] == 'email' and $sortedBy['sortDirection'] == 'asc')
-                        class="selectedSort"
-                    @endif
+                    class="
+                        sort
+                        @if($sortedBy['sortField'] == 'email' and $sortedBy['sortDirection'] == 'asc')
+                            selectedSort
+                        @endif
+                    "
                 >
                     &#9650;
                 </a>
@@ -44,9 +53,12 @@
             <div>
                 <a
                     href="{{ route('home', ['sortField' => 'email', 'sortDirection' => 'desc']) }}"
-                    @if($sortedBy['sortField'] == 'email' and $sortedBy['sortDirection'] == 'desc')
-                        class="selectedSort"
-                    @endif
+                    class="
+                        sort
+                        @if($sortedBy['sortField'] == 'email' and $sortedBy['sortDirection'] == 'desc')
+                            selectedSort
+                        @endif
+                    "
                 >
                     &#9660;
                 </a>
@@ -61,9 +73,12 @@
             <div>
                 <a
                     href="{{ route('home', ['sortField' => 'created_at', 'sortDirection' => 'asc']) }}"
-                    @if($sortedBy['sortField'] == 'created_at' and $sortedBy['sortDirection'] == 'asc')
-                        class="selectedSort"
-                    @endif
+                    class="
+                        sort
+                        @if($sortedBy['sortField'] == 'created_at' and $sortedBy['sortDirection'] == 'asc')
+                            selectedSort
+                        @endif
+                    "
                 >
                     &#9650;
                 </a>
@@ -71,9 +86,12 @@
             <div>
                 <a
                     href="{{ route('home', ['sortField' => 'created_at', 'sortDirection' => 'desc']) }}"
-                    @if($sortedBy['sortField'] == 'created_at' and $sortedBy['sortDirection'] == 'desc')
-                        class="selectedSort"
-                    @endif
+                    class="
+                        sort
+                        @if($sortedBy['sortField'] == 'created_at' and $sortedBy['sortDirection'] == 'desc')
+                            selectedSort
+                        @endif
+                    "
                 >
                     &#9660;
                 </a>

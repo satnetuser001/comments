@@ -1,76 +1,104 @@
 body {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 10px;
-
-
-	background-image: url('/images/background/01.jpg');
-	/*background-image: url('/images/background/16.jpg');*/
-	/*background-image: url('/images/background/27.jpg');*/
-	/*background-image: url('/images/background/29.jpg');*/
-	background-size: cover;
-	background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-image: url('/images/background/16.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .logo {
-	font-size: 45px;
-	font-weight: bold;
+    font-size: 60px;
 }
 
 main {
-	/*background: Plum;*/
-
-	display: flex;
-	flex-direction: column;
-	/*align-items: center;*/
-	gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.newComment {
-	background: lime;
-	
+table {
+	width: 1200px;
 }
 
-table,td {
-    border: 2px solid;
-    /*text-align:center;*/
+.tableHead {
+    display: inline-flex;
+    gap: 40px;
 }
 
 th {
-	display: inline-flex;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 10px;
+    background-color: white;
+    border-radius: 10px;
 }
 
-ul {
-	padding: 0;
-}
-
-.children {
-	/*margin-left: 50px;*/
-	padding-left: 50px;
+.sort {
+    text-decoration: none;
 }
 
 .selectedSort {
-	background: pink;
+    background: Tan;
+    padding: .5px;
+    border-radius: 5px;
 }
 
-/*-----table-----*/
-.table {
-	background: Aquamarine;
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.comment {
+    background-color: white;
+    background: linear-gradient(to bottom, White 90%, Tan);
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+.commentHead {
+	display: flex;
+	gap: 50px;
+	font-size: 18px;
+	font-weight: bold;
+	border-radius: 20px 20px 0px 0px;
+	padding: 15px;
+    background-color: Tan;
+}
+
+.commentBody {
+	display: flex;
+    flex-direction: column;
+}
+
+.text {
+	font-size: 22px;
+    margin: 10px;
+}
+
+.buttonAnswer {
+    align-self: end;
+    margin-right: 5px;
+}
+
+.commentChild {
+    margin: 10px 5px 0px 80px;
+    padding-bottom: 1px;
 }
 
 /*-----paginator-----*/
-/*max-content Pagination*/
 .pagination{
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	column-gap: 7px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 7px;
 }
 .paginationElement{
-	display: flex;
+    display: flex;
     align-items: center;
-	text-decoration: none;
+    text-decoration: none;
     background-color: white;
     color: black;
     border: 2px solid #e7e7e7;
@@ -80,8 +108,27 @@ ul {
     padding-right: 8px;
 }
 .paginationElementPressed{
-	background: Silver;
-	color: White;
+    background: Tan;
+    color: White;
+}
+
+
+.button {
+    display: grid;
+    width: 75px;
+    height: 25px;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+    border-radius: 7px;
+    justify-content: center;
+    align-content: center;
+}
+
+.buttonCreate {
+    width: 160px;
+    margin-bottom: 15px;
 }
 
 /*-----create page-----*/
