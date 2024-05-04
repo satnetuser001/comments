@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Create Comment Page</title>
-    <link rel="stylesheet" type="text/css" href="/styles/main.css">
-</head>
-<body>
-    <h1>
-        Create Comment Page
-    </h1>
+@extends('layouts.basic')
+@section('title', 'Create Comment Page')
+
+@section('content')
     <div>
-        <a href="{{  route('home')  }}">Home</a>
+        <a href="{{  route('home')  }}">Домой</a>
     </div>
 
     <form action="{{ route('store') }}" method="POST">
@@ -77,6 +69,4 @@
 
         <input type="submit" class="" value="Добавить">
     </form>
-
-</body>
-</html>
+@endsection

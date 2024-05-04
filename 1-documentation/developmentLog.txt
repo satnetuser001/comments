@@ -128,3 +128,14 @@ Changes have been made to the "Home Page" view to display comments more clearly.
 
 2024.05.02
 Added display of the selected comment sorting on the page.
+Don’t have time to implement HTML tags in the comments. Leave the work in the 'htmlTags' git branch.
+
+2024.05.03
+DESIGN of web application.
+Created a basic view from which all other views will be inherited.
+Added Logo style.
+Using the site app.leonardo.ai generated several images for the background of the site.
+Selected several priority images.
+
+2024.05.04
+For pagination reused the style of briefnews.dp.ua
