@@ -19,7 +19,7 @@ main {
 }
 
 table {
-	width: 1200px;
+    width: 1200px;
 }
 
 .tableHead {
@@ -59,22 +59,22 @@ ul {
 }
 
 .commentHead {
-	display: flex;
-	gap: 50px;
-	font-size: 18px;
-	font-weight: bold;
-	border-radius: 20px 20px 0px 0px;
-	padding: 15px;
+    display: flex;
+    gap: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 20px 20px 0px 0px;
+    padding: 15px;
     background-color: Tan;
 }
 
 .commentBody {
-	display: flex;
+    display: flex;
     flex-direction: column;
 }
 
 .text {
-	font-size: 22px;
+    font-size: 22px;
     margin: 10px;
 }
 
@@ -132,6 +132,47 @@ ul {
 }
 
 /*-----create page-----*/
+.createPage {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.createForm {
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    background-color: white;
+    background: linear-gradient(to bottom, White 90%, Tan);
+    border-radius: 20px;
+    gap: 10px;
+    font-size: 22px;
+}
+
+.input {
+	display: flex;
+    flex-direction: column;
+    margin: 0px 20px;
+}
+
+.input > input {
+    font-size: 22px;
+}
+
+.input > textarea {
+    height: 150px;
+    font-size: 22px;
+}
+
+.submit {
+    display: flex;
+    align-self: end;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 5px 40px 0px;
+    width: 100px;
+}
+
 .errorMessage {
     display: flex;
     color: FireBrick;

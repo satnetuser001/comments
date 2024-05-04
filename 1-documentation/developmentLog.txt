@@ -142,3 +142,4 @@ For pagination reused the style of briefnews.dp.ua
 Added style for "New comment" and "answer" buttons.
 Added style for comment.
 Added style for sorting.
+Added style for "Create Comment Page".
