@@ -52,10 +52,11 @@ ul {
 }
 
 .comment {
+	min-width: 700px;
+	margin: 20px 0;
     background-color: white;
     background: linear-gradient(to bottom, White 90%, Tan);
     border-radius: 20px;
-    margin: 20px 0;
 }
 
 .commentHead {

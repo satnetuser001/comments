@@ -143,3 +143,6 @@ Added style for "New comment" and "answer" buttons.
 Added style for comment.
 Added style for sorting.
 Added style for "Create Comment Page".
+
+2024.05.04
+Added min-width for comment.
