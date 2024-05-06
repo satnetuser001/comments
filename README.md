@@ -9,14 +9,14 @@ developmentLog.txt - description of application development step by step;
 uml folder - project of database;
 mysqlDumpDB folder - dump of database with test data;
 
--Install of application:
-recommended OS:
-    Ubuntu 22
-requirements:
-    php 8.1 or newer
-    MySQL
-    git
-    composer
+-Install of application:<br>
+recommended OS:<br>
+    Ubuntu 22<br>
+requirements:<br>
+    php 8.1 or newer<br>
+    MySQL<br>
+    git<br>
+    composer<br>
 In terminal open folder where you will be install the project.
 Clone project from github repository:
     git clone https://github.com/satnetuser001/comments.git
