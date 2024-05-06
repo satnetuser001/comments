@@ -11,45 +11,44 @@ mysqlDumpDB folder - dump of database with test data;
 
 -Install of application:<br>
 recommended OS:<br>
-    Ubuntu 22<br>
+	Ubuntu 22<br>
 requirements:<br>
-    php 8.1 or newer<br>
-    MySQL<br>
-    git<br>
-    composer<br>
+	php 8.1 or newer<br>
+	MySQL<br>
+	git<br>
+	composer<br>
 In terminal open folder where you will be install the project.
 Clone project from github repository:
-    git clone https://github.com/satnetuser001/comments.git
+	git clone https://github.com/satnetuser001/comments.git
 Go to the 'comments' project folder.
 Install dependencies using Composer:
-    composer install
+	composer install
 
 -Prepare the database and database user:
 In terminal login to MySQL as root:
-    mysql -uroot -p
+	mysql -uroot -p
 Create database:
-    CREATE DATABASE comments
-    CHARACTER SET utf8mb4
-    COLLATE utf8mb4_unicode_ci;
+	CREATE DATABASE comments
+	CHARACTER SET utf8mb4
+	COLLATE utf8mb4_unicode_ci;
 Create database user:
-    CREATE USER 'comments_app'@'localhost' IDENTIFIED BY '1077';
+	CREATE USER 'comments_app'@'localhost' IDENTIFIED BY '1077';
 Grant privileges to database user:
-    GRANT ALL PRIVILEGES ON comments.* TO 'comments_app'@'localhost';
+	GRANT ALL PRIVILEGES ON comments.* TO 'comments_app'@'localhost';
 Exit from MySQL:
-    EXIT
+	EXIT
 
 -Roll back a database backup:
 In terminal open folder 1-documentation/mysqlDumpDB.
 Load a database backup:
-    mysql -uroot -p comments < comments.sql
+	mysql -uroot -p comments < comments.sql
 
 -To run the application:
 You need unoccupied port 8000.
 In a terminal, open the application folder and run:
-    php artisan serve
+	php artisan serve
 Open in browser:
-    http://127.0.0.1:8000/
-
+	http://127.0.0.1:8000/
 
 -Not implemented requirements from a test task:
 use frontend framework - I'm a backend developer;
