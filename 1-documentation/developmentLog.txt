@@ -147,3 +147,5 @@ Added style for "Create Comment Page".
 2024.05.04
 Added min-width for comment.
 Included an .env file in the repository to simplify installation of the project.
+Write a README file.
+Deployed the application to http://briefnews.dp.ua/
